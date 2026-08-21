@@ -11,9 +11,16 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.Random;
+
+import kotlin.random.URandomKt;
 
 public class MainActivity extends AppCompatActivity {
-    int contador = 0;
+    Random rng = new Random();;
+    double contador = 0;
+    double sum = 1;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +30,12 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = findViewById(R.id.textView);
 
         b.setOnClickListener(view -> {
-            contador++;
-            tv.setText(Integer.toString(contador));
+
+            contador = contador + Math.round(sum);
+            tv.setText(Double.toString(contador));
+            tv.setBackgroundColor(rng.nextInt());
+            tv.setTextSize(55);
+            sum = sum * 1.01;
         });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
