@@ -10,8 +10,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.concurrent.atomic.AtomicInteger;
 
+public class MainActivity extends AppCompatActivity {
+    int contador = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,11 +21,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button b = findViewById(R.id.button);
         TextView tv = findViewById(R.id.textView);
-        int contador;
-        b.setOnClickListener(view ->
-                contador++;
-        tv.setText(Integer.toString(contador));
-                );
+
+        b.setOnClickListener(view -> {
+            contador++;
+            tv.setText(Integer.toString(contador));
+        });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
