@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             tv.setText(Double.toString(contador));
             tv.setBackgroundColor(rng.nextInt());
             tv.setTextSize(55);
-            sum = sum * 1.02;
+            sum = sum * 1.05;
         });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
