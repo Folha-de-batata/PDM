@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             int min = Integer.parseInt(edmin.getText().toString());
             int max = Integer.parseInt(edmax.getText().toString());
             contador = contador + Math.round(sum);
-            tv.setText(Double.toString(contador));
+            tv.setText(Double.toString (rng.nextInt(min, max)));
             tv.setBackgroundColor(rng.nextInt(min, max));
             tv.setTextSize(55);
 
