@@ -1,5 +1,6 @@
 package com.example.apps;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,15 +37,11 @@ public class MainActivity extends AppCompatActivity {
         b.setOnClickListener(view -> {
             int min = Integer.parseInt(edmin.getText().toString());
             int max = Integer.parseInt(edmax.getText().toString());
-            contador = contador + Math.round(sum);
             tv.setText(Double.toString (rng.nextInt(min, max)));
             tv.setBackgroundColor(rng.nextInt(min, max));
             tv.setTextSize(55);
 
-            if (contador >= 20*sum){
-                contador = contador - 20*sum;
-                sum = sum * 1.05;
-            }
+            Intent i = new Intent();
 
 
 
