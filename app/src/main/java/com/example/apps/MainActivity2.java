@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity2 extends AppCompatActivity {
 
     @Override
+    int posicao = 0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
